@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "106564184591",
+    "project_id": "testga-1f176"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106564184591:android:e6b2af4b62a3db8a",
+        "android_client_info": {
+          "package_name": "com.fifty_five.testga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyAgiEatBxyzdzh4V80EJrlxNkfr2Aj2s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-74607529-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

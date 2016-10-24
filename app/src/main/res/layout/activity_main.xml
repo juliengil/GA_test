@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.fifty_five.testga.MainActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_main" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="235dp"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        app:layout_anchorGravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_vertical|center_horizontal">
+
+        <Button
+            android:text="EventBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/EventBuilder"
+            app:layout_anchorGravity="center_vertical|right"
+            android:layout_gravity="bottom|left" />
+
+        <Button
+            android:text="TimingBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TimingBuilder"
+            android:layout_gravity="right|center_vertical"
+            app:layout_anchorGravity="top" />
+
+        <Button
+            android:text="SocialBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/SocialBuilder"
+            android:layout_gravity="left|center_vertical"
+            app:layout_anchorGravity="top" />
+
+        <Button
+            android:text="ScreenViewBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ScreenViewBuilder"
+            android:layout_gravity="top|left|center_vertical"
+            app:layout_anchorGravity="top" />
+
+        <Button
+            android:text="ExceptionBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ExceptionBuilder"
+            android:layout_gravity="bottom|left|center_vertical"
+            app:layout_anchorGravity="top" />
+
+        <Button
+            android:text="HitBuilder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/HitBuilder"
+            app:layout_anchorGravity="bottom|right|center_vertical"
+            android:layout_gravity="bottom|right" />
+
+        <Button
+            android:text="Tracker Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Tracker" />
+
+        <Button
+            android:text="Phone Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Phone" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
