@@ -190,7 +190,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View view) {
             Log.d("MANUFACTURER", Build.MANUFACTURER);
+            Log.d("BRAND", Build.BRAND);
             Log.d("MODEL", Build.MODEL);
+            Log.d("PRODUCT", Build.PRODUCT);
             Log.d("SDK_INT", String.valueOf(Build.VERSION.SDK_INT));
             Log.d("OS_RELEASE", Build.VERSION.RELEASE);
             task.execute();
