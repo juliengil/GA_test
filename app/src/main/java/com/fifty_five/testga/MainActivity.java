@@ -218,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
         myMap.put("referrer", mTracker.get("referrer"));
         myMap.put("sampleRate", mTracker.get("sampleRate"));
         myMap.put("screenColors", mTracker.get("screenColors"));
+//      "ScreenName", "ScreenName", "screen name", "cd", "Screen Name", "screenname", "SCREEN_NAME", "SCREEN NAME", "SCREENNAME" are not working
         myMap.put("screenName", mTracker.get("screenName"));
         myMap.put("screenResolution", mTracker.get("screenResolution"));
         myMap.put("sessionTimeout", mTracker.get("sessionTimeout"));
