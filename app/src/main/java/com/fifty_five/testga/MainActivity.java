@@ -20,7 +20,9 @@ import com.google.android.gms.analytics.ecommerce.ProductAction;
 import com.google.android.gms.analytics.ecommerce.Promotion;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -206,34 +208,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void printTrackerDetails() {
-        HashMap<String, String> myMap = new HashMap<>();
-        myMap.put("enableAdvertisingIdCollection", mTracker.get("enableAdvertisingIdCollection"));
-        myMap.put("enableAutoActivityTracking", mTracker.get("enableAutoActivityTracking"));
-        myMap.put("enableExceptionReporting", mTracker.get("enableExceptionReporting"));
-        myMap.put("anonymize", mTracker.get("anonymize"));
-        myMap.put("appId", mTracker.get("appId"));
-        myMap.put("appInstallerId", mTracker.get("appInstallerId"));
-        myMap.put("appName", mTracker.get("appName"));
-        myMap.put("appVersion", mTracker.get("appVersion"));
-        myMap.put("campaignParamsOnNextHit", mTracker.get("campaignParamsOnNextHit"));
-        myMap.put("clientId", mTracker.get("clientId"));
-        myMap.put("encoding", mTracker.get("encoding"));
-        myMap.put("hostname", mTracker.get("hostname"));
-        myMap.put("language", mTracker.get("language"));
-        myMap.put("location", mTracker.get("location"));
-        myMap.put("page", mTracker.get("page"));
-        myMap.put("referrer", mTracker.get("referrer"));
-        myMap.put("sampleRate", mTracker.get("sampleRate"));
-        myMap.put("screenColors", mTracker.get("screenColors"));
-//      "ScreenName", "ScreenName", "screen name", "cd", "Screen Name", "screenname", "SCREEN_NAME", "SCREEN NAME", "SCREENNAME" are not working
-        myMap.put("screenName", mTracker.get("screenName"));
-        myMap.put("screenResolution", mTracker.get("screenResolution"));
-        myMap.put("sessionTimeout", mTracker.get("sessionTimeout"));
-        myMap.put("title", mTracker.get("title"));
-        myMap.put("useSecure", mTracker.get("useSecure"));
-        myMap.put("viewportSize", mTracker.get("viewportSize"));
-        Log.d("Tracker", myMap.toString());
-        Log.d("Tracker", mTracker.toString());
+        for (Field field : mTracker.getClass().getDeclaredFields()) {
+            field.setAccessible(true); // set the field to be accessible
+            Object value = null;
+            try {
+                value = field.get(mTracker); // get the value for the given field
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+            if (value != null) { // ignore attributes which aren't set
+                Log.d("TRACKER VALUE", field.getName() + "=" + value); // print attribute + value
+            }
+        }
     }
 
     @Override
