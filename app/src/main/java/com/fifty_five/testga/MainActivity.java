@@ -83,6 +83,11 @@ public class MainActivity extends AppCompatActivity {
 
         AnalyticsApplication application = (AnalyticsApplication) getApplication();
         mTracker = application.getDefaultTracker();
+        mTracker.setUseSecure(true);
+        mTracker.enableAdvertisingIdCollection(true);
+        mTracker.enableAutoActivityTracking(true);
+        mTracker.set("foo", "bar");
+        Log.d("foo", mTracker.get("foo"));
     }
 
 
